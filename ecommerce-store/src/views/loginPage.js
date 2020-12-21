@@ -1,6 +1,6 @@
 import React from 'react';
 
-function LoginPage() {
+const LoginPage = () => {
     return (
         <h1>Placeholder Test</h1>
     )
