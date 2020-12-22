@@ -1,6 +1,6 @@
 import React from 'react';
 
-function CartPage() {
+const CartPage = () => {
     return (
         <h1>Placeholder Test</h1>
     )
