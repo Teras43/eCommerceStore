@@ -7,7 +7,9 @@ const Login = () =>{
 
 return(
     <LoginContainer>
-        <NotifyDiv>Please login or continue as guest</NotifyDiv>
+        <NotifyDiv>Please Login Or Continue As Guest</NotifyDiv>
+        <EmailInput placeholder="Email" />
+        <PasswordInput placeholder="Password"/>
         <ButtonDiv>
         <ButtonStyles>Login</ButtonStyles>
         <ButtonStyles>Cancel</ButtonStyles>
@@ -24,6 +26,15 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 `
+const EmailInput = styled.input`
+height: 10px;
+width: 100px;`
+
+const PasswordInput = styled.input`
+height: 10px;
+width: 100px;`
+
+
 const ButtonDiv = styled.div`
 display: flex;
 max-width: 250px;
@@ -37,8 +48,9 @@ const ButtonStyles = styled.button`
 
 `
 const NotifyDiv = styled.div`
-font-size: 25px;
 display: flex;
+flex-wrap: nowrap;
+font-size: 20px;
 justify-content: center;
 align-items: center;
 color: blue;
