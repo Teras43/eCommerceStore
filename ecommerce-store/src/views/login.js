@@ -11,9 +11,9 @@ return(
         <EmailInput placeholder="Email" />
         <PasswordInput placeholder="Password"/>
         <ButtonDiv>
-        <ButtonStyles Onclick="">Login</ButtonStyles>
-        <ButtonStyles Onclick="">Cancel</ButtonStyles>
-        <ButtonStyles Onclick="">guest</ButtonStyles>
+            <ButtonStyles Onclick="">Login</ButtonStyles>
+            <ButtonStyles Onclick="">Cancel</ButtonStyles>
+            <ButtonStyles Onclick="">guest</ButtonStyles>
         </ButtonDiv>
    </LoginContainer>
    )

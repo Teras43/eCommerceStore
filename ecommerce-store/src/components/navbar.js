@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link, BrowserRouter, Route, Switch } from "react-router-dom";
-import styled from 'styled-components'
+import styled from 'styled-components';
+import Login from '../views/login';
 
 const NavBar = () => {
     const MyCart = () => <div>My Cart</div>
-    const Login = () => <div>Login</div>
 
     return (
         <HeaderContent>
@@ -13,11 +13,11 @@ const NavBar = () => {
                     <Link to="../views/cartPage">My Cart</Link>
                 </CartLink>
                 <LoginLink>
-                    <Link to="../views/loginPage">Login</Link>
+                    <Link to="../views/login">Login</Link>
                 </LoginLink>
                 <Switch>
-                    <Route path="../views/cartPage" component={MyCart}/>
-                    <Route path="../views/loginPage" component={Login}/>
+                    <Route path="/cartPage" component={MyCart}/>
+                    <Route path="/login" component={Login}/>
                 </Switch>
             </BrowserRouter>
         </HeaderContent>
@@ -32,6 +32,7 @@ const HeaderContent = styled.div`
 `
 
 const CartLink = styled.div`
+
     margin-right: 6px;
 `
 
