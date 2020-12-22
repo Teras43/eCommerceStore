@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
-//import header and footer from brandons commits later
+// import NavBar from './navbar.js' brandons navbar. Work it out when he submits to master
 //import cart and have login proceed when you head to checkout
 
 const Login = () =>{
@@ -11,9 +11,9 @@ return(
         <EmailInput placeholder="Email" />
         <PasswordInput placeholder="Password"/>
         <ButtonDiv>
-        <ButtonStyles>Login</ButtonStyles>
-        <ButtonStyles>Cancel</ButtonStyles>
-        <ButtonStyles>guest</ButtonStyles>
+        <ButtonStyles Onclick="">Login</ButtonStyles>
+        <ButtonStyles Onclick="">Cancel</ButtonStyles>
+        <ButtonStyles Onclick="">guest</ButtonStyles>
         </ButtonDiv>
    </LoginContainer>
    )
