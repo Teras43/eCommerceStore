@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import ProductList from '../components/productList';
-import Header from '../components/header';
-import Footer from '../components/footer';
+import ProductList from '../components/productList'
 
 const productAPI = 'https://my-json-server.typicode.com/tdmichaelis/typicode/products'
 
@@ -19,13 +17,9 @@ const ProductPage = () => {
     }
 
     return (
-        <>
-            <Header />
-            <ProductList 
-                productData={productData}
-            />
-            <Footer />
-        </>
+        <ProductList 
+            productData={productData}
+        />
     )
 }
 

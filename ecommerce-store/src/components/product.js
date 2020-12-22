@@ -2,38 +2,33 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Product = ({img, title, price, rating}) => {
-    // onClick function to render a single product needed
-
     return (
         <ProductContainer>
             <ImgContainer>
                 <ProductImage src={img} alt='Not found!'/>
             </ImgContainer>
             <div>{title}</div>
-            <div>${price}</div>
-            <div>Rating: &nbsp;&nbsp;{rating} / 5</div>
+            <div>{price}</div>
+            <div>{rating}</div>
         </ProductContainer>
     )
 }
 
 /** Styles */
 const ProductContainer = styled.div`
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
     margin: 45px;
     box-sizing: border-box;
 `
 const ImgContainer = styled.div`
     height: 75%;
     object-fit: contain;
-    justify-content: center;
 `
 
 const ProductImage = styled.img`
-    max-height: 80%;
-    max-width: 100%;
-    height: auto;
-    width: auto;
+    height: 80%;
+    width: 100%;
 `
 
 export default Product
