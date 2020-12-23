@@ -1,21 +1,27 @@
 import React from 'react';
 import styled from 'styled-components'
+import Footer from '../components/footer';
+import Header from '../components/header';
 // import NavBar from './navbar.js' brandons navbar. Work it out when he submits to master
 //import cart and have login proceed when you head to checkout
 
-const Login = () =>{
+const Login = () => {
 
 return(
-    <LoginContainer>
-        <NotifyDiv>Please Login Or Continue As Guest</NotifyDiv>
-        <EmailInput placeholder="Email" />
-        <PasswordInput placeholder="Password"/>
-        <ButtonDiv>
-            <ButtonStyles Onclick="">Login</ButtonStyles>
-            <ButtonStyles Onclick="">Cancel</ButtonStyles>
-            <ButtonStyles Onclick="">guest</ButtonStyles>
-        </ButtonDiv>
-   </LoginContainer>
+    <>
+        <Header />
+        <LoginContainer>
+            <NotifyDiv>Please Login Or Continue As Guest</NotifyDiv>
+            <EmailInput placeholder="Email" />
+            <PasswordInput placeholder="Password"/>
+            <ButtonDiv>
+                <ButtonStyles Onclick="">Login</ButtonStyles>
+                <ButtonStyles Onclick="">Cancel</ButtonStyles>
+                <ButtonStyles Onclick="">guest</ButtonStyles>
+            </ButtonDiv>
+        </LoginContainer>
+        <Footer />
+   </>
    )
 }
 
