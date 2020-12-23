@@ -1,9 +1,15 @@
 import React from 'react';
+import Footer from '../components/footer';
+import Header from '../components/header';
 
-const CartPage = () => {
+const MyCart = () => {
     return (
-        <h1>Placeholder Test</h1>
+        <>
+            <Header />
+            <h1>Placeholder Test</h1>
+            <Footer />
+        </>
     )
 }
 
-export default CartPage
+export default MyCart

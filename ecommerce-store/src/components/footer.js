@@ -25,9 +25,9 @@ const FooterContainer = styled.div`
 
 const FooterTextWrap = styled.div`
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 100%;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
 `
 
 export default Footer
