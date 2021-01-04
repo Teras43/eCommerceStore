@@ -23,6 +23,7 @@ const Login = () => {
 //styles
 const LoginContainer = styled.div`
     display: flex;
+    min-height: calc(100vh - 85px);
     flex-direction: column;
     justify-content: center;
     align-items: center;
