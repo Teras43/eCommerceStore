@@ -1,18 +1,28 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 const NavBar = () => {
+    const style = { color: "black" };
+
     return (
         <HeaderContent>
             <SearchProducts>
-                <Link to="/">Search Products</Link>
+                <NavLink to="/" style={style} exact>
+                    Products
+                </NavLink>
             </SearchProducts>
+            {" | "}
             <CartLink>
-                <Link to="/cartPage">My Cart</Link>
+                <NavLink to="/cartPage" style={style}>
+                    Cart
+                </NavLink>
             </CartLink>
+            {" | "}
             <LoginLink>
-                <Link to="/login">Login</Link>
+                <NavLink to="/login" style={style}>
+                    Login
+                </NavLink>
             </LoginLink>
         </HeaderContent>
     );
@@ -24,7 +34,7 @@ const HeaderContent = styled.div`
     justify-content: flex-end;
     align-items: center;
     width: 50%;
-    font-size: 14px;
+    font-size: 16px;
     @media only screen and (min-width: 375px) {
         width: 50%;
     }
@@ -32,14 +42,15 @@ const HeaderContent = styled.div`
 
 const SearchProducts = styled.div`
     display: flex;
-    margin-left: 30px;
+    color: black;
     @media only screen and (min-width: 375px) {
-        margin-right: 12px;
+        margin-right: 10px;
     }
 `;
 
 const CartLink = styled.div`
     margin-right: 6px;
+    margin-left: 8px;
 `;
 
 const LoginLink = styled.div`

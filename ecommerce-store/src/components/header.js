@@ -1,12 +1,17 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import NavBar from "./navbar";
 import styled from "styled-components";
 
-const Header = (authenticated) => {
+const Header = () => {
+    const style = { color: "black" };
+
     return (
         <HeaderContainer>
             <CompanyNameWrap>
-                <h3>Company Name</h3>
+                <NavLink to="/" style={style} exact>
+                    Company Name
+                </NavLink>
             </CompanyNameWrap>
             <NavBar />
         </HeaderContainer>
@@ -15,11 +20,12 @@ const Header = (authenticated) => {
 
 const HeaderContainer = styled.div`
     display: flex;
-    flex: 1fr;
     width: 100%;
     align-items: center;
     background-color: green;
-    height: 50px;
+    height: 70px;
+    font-size: 23px;
+    text-decoration: none;
 `;
 
 const CompanyNameWrap = styled.div`
