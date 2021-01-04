@@ -1,13 +1,18 @@
 import React from "react";
-import Footer from "../components/footer";
-import Header from "../components/header";
+import styled from "styled-components";
 
 const MyCart = () => {
     return (
-        <>
+        <CartContainer>
             <h1>Placeholder Test</h1>
-        </>
+        </CartContainer>
     );
 };
+
+// Styles
+const CartContainer = styled.div`
+    display: flex;
+    min-height: calc(100vh - 105px);
+`;
 
 export default MyCart;
