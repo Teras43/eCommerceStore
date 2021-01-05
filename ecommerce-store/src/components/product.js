@@ -1,16 +1,34 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
-const Product = ({ img, title, price, rating }) => {
+const Product = ({ img, title, price, rating, description }) => {
+    const productData = {
+        img: img,
+        title: title,
+        price: price,
+        rating: rating,
+        description: description,
+    };
+
+    localStorage.setItem("productData", productData);
+
     return (
-        <ProductContainer>
-            <ImgContainer>
-                <ProductImage src={img} alt="Not found!" />
-            </ImgContainer>
-            <div>{title}</div>
-            <div>{price}</div>
-            <div>{rating}</div>
-        </ProductContainer>
+        <NavLink
+            to={{
+                pathname: "/productDetailsPage/" + title,
+                productData,
+            }}
+        >
+            <ProductContainer>
+                <ImgContainer>
+                    <ProductImage src={img} alt="Not found!" />
+                </ImgContainer>
+                <div>{title}</div>
+                <div>{price}</div>
+                <div>{rating}</div>
+            </ProductContainer>
+        </NavLink>
     );
 };
 

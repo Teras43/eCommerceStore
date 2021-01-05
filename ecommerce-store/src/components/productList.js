@@ -2,8 +2,6 @@ import React from "react";
 import Product from "./product";
 
 const ProductList = ({ productData }) => {
-    const HandleProductClicked = () => {};
-
     return (
         <div>
             {productData.map((product, index) => (
@@ -13,7 +11,7 @@ const ProductList = ({ productData }) => {
                     title={product.title}
                     price={product.price}
                     rating={product.rating}
-                    onClick={HandleProductClicked}
+                    description={product.description}
                 />
             ))}
         </div>
