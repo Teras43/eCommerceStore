@@ -9,6 +9,10 @@ const ProductPage = () => {
     const [dropDown, setDropDown] = useState({
         dropDownVal: 'allItems'
     })
+    //function that calls listener
+    setDropDown = () => {
+
+    }
 
 
    const [productData, setProductData] = useState([]);
@@ -23,6 +27,7 @@ const ProductPage = () => {
         setProductData(jsonData);
     };
     console.log(dropDown.dropDownVal);
+    //have the functionality in an event listener to change product list when changed
     let productDisplay = productData.filter(product => product.category == dropDown.dropDownVal || dropDown.dropDownVal == 'allItems');
 
     console.log(productData);
