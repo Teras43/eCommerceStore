@@ -6,7 +6,12 @@ const productAPI =
     "https://my-json-server.typicode.com/tdmichaelis/typicode/products";
 
 const ProductPage = () => {
-    const [productData, setProductData] = useState([]);
+    const [dropDown, setDropDown] = useState({
+        dropDownVal: 'allItems'
+    })
+
+
+   const [productData, setProductData] = useState([]);
 
     useEffect(() => {
         getProductData();
@@ -17,12 +22,16 @@ const ProductPage = () => {
         const jsonData = await response.json();
         setProductData(jsonData);
     };
+    console.log(dropDown.dropDownVal);
+    let productDisplay = productData.filter(product => product.category == dropDown.dropDownVal || dropDown.dropDownVal == 'allItems');
+
     console.log(productData);
+    console.log(dropDown);
 
     return (
         <>
-            <SearchAndCategory productData={productData} />
-            <ProductList productData={productData} />
+            <SearchAndCategory productData={productData} dropDown={dropDown} />
+            <ProductList productData={productDisplay} />
         </>
     );
 };

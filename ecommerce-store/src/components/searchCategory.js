@@ -1,8 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const SearchAndCategory = ({productData}) => {
+const SearchAndCategory = ({productData, dropDown}) => {
     let categoryArray = [];
+
+    const handleChange = (event) => {
+        dropDown = {
+            dropDownVal: event.target.value
+        };
+
+        console.log(dropDown)
+   
+    }
 
     productData.map(product => {
         if (!categoryArray.includes(product.category)) {
@@ -13,17 +22,19 @@ const SearchAndCategory = ({productData}) => {
             categoryArray
         )
     })
+   
 
     let dropDownValue = categoryArray.map((category, index) => {
         return(
             <option key={index} value={category}>{category}</option>
         )
     })
+    
         
     return (
         <SearchBarAndCategoryContainer> 
             <SearchInput placeholder='Search for items!'/>
-            <SelectMenu>
+            <SelectMenu value='allItems'onChange={handleChange}>
                 <option value='allItems'>All Items</option>
                 {dropDownValue}
             </SelectMenu>
