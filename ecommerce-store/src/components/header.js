@@ -4,7 +4,7 @@ import NavBar from "./navbar";
 import styled from "styled-components";
 
 const Header = () => {
-    const style = { color: "black" };
+    const style = { color: "white" };
 
     return (
         <HeaderContainer>
@@ -22,10 +22,11 @@ const HeaderContainer = styled.div`
     display: flex;
     width: 100%;
     align-items: center;
-    background-color: green;
+    background-color: #049287;
     height: 70px;
     font-size: 23px;
     text-decoration: none;
+    color: white;
 `;
 
 const CompanyNameWrap = styled.div`

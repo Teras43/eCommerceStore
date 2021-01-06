@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 const NavBar = () => {
-    const style = { color: "black" };
+    const style = { color: "white" };
 
     return (
         <HeaderContent>
