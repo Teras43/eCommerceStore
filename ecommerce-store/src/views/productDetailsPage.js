@@ -24,6 +24,16 @@ const ProductDetails = (props) => {
             <DescriptionBlock>
                 <div>{props.location.productData.description}</div>
             </DescriptionBlock>
+            <PurchaseOptions>
+                <CartButton>Add to Cart</CartButton>
+                Quantity:{" "}
+                <QuantityInput
+                    placeholder="0"
+                    id="QuantityInput"
+                    type="number"
+                    onwheel="this.blur()"
+                />
+            </PurchaseOptions>
         </ProductContainer>
     );
 };
@@ -74,6 +84,32 @@ const ProductImage = styled.img`
     max-width: 100%;
     height: auto;
     width: auto;
+`;
+
+const PurchaseOptions = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    margin-top: 30px;
+`;
+
+const CartButton = styled.button`
+    height: 40px;
+    width: 100px;
+    font-size: 16px;
+    margin-left: 60px;
+    background-color: #049287;
+    color: #e7e7e7;
+    border-radius: 10px;
+    box-shadow: 3px 3px;
+`;
+
+const QuantityInput = styled.input`
+    width: 40px;
+    margin-right: 60px;
+    font-size: 16px;
+    text-align: center;
 `;
 
 export default ProductDetails;
