@@ -1,37 +1,69 @@
-import React from "react";
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import styled from "styled-components";
+import store from "../store/index";
 
 const ProductDetails = (props) => {
-    if (!props) {
-        localStorage.getItem("productData");
+    const [productCount, setProductCount] = useState(1);
+
+    const history = useHistory();
+
+    let altData;
+    if (!props.location.productData) {
+        altData = JSON.parse(localStorage.getItem("productData"));
+    } else {
+        localStorage.setItem(
+            "productData",
+            JSON.stringify(props.location.productData)
+        );
     }
 
     return (
         <ProductContainer>
             <ImgContainer>
                 <ProductImage
-                    src={props.location.productData.img}
+                    src={(props.location.productData || altData).img}
                     alt="Not found!"
                 />
             </ImgContainer>
             <BaseInfo>
-                <div>{props.location.productData.title}</div>
-                <div>Price: ${props.location.productData.price}</div>
-                <div>Rating: {props.location.productData.rating}</div>
+                <div>{(props.location.productData || altData).title}</div>
+                <div>
+                    Price: ${(props.location.productData || altData).price}
+                </div>
+                <div>
+                    Rating: {(props.location.productData || altData).rating}
+                </div>
             </BaseInfo>
             <br />
             <DetailHeader>Product Details</DetailHeader>
             <DescriptionBlock>
-                <div>{props.location.productData.description}</div>
+                <div>{(props.location.productData || altData).description}</div>
             </DescriptionBlock>
             <PurchaseOptions>
-                <CartButton>Add to Cart</CartButton>
+                <CartButton
+                    onClick={() => {
+                        store.dispatch({
+                            type: "ADD_TO_CART",
+                            data: {
+                                productName: (
+                                    props.location.productData || altData
+                                ).title,
+                                quantity: productCount,
+                            },
+                        });
+                        history.push("/cartPage");
+                    }}
+                >
+                    Add to Cart
+                </CartButton>
                 Quantity:{" "}
                 <QuantityInput
-                    placeholder="0"
-                    id="QuantityInput"
-                    type="number"
-                    onwheel="this.blur()"
+                    type="tel"
+                    value={productCount}
+                    onChange={(event) => {
+                        setProductCount(Number(event.target.value));
+                    }}
                 />
             </PurchaseOptions>
         </ProductContainer>
@@ -100,9 +132,9 @@ const CartButton = styled.button`
     font-size: 16px;
     margin-left: 60px;
     background-color: #049287;
-    color: #e7e7e7;
+    color: white;
     border-radius: 10px;
-    box-shadow: 3px 3px;
+    outline: none;
 `;
 
 const QuantityInput = styled.input`

@@ -4,14 +4,12 @@ import styled from "styled-components";
 
 const Product = ({ img, title, price, rating, description }) => {
     const productData = {
-        img: img,
-        title: title,
-        price: price,
-        rating: rating,
-        description: description,
+        img,
+        title,
+        price,
+        rating,
+        description,
     };
-
-    localStorage.setItem("productData", productData);
 
     return (
         <NavLink

@@ -22,7 +22,7 @@ const SearchAndCategory = ({ productData }) => {
 
     return (
         <SearchBarAndCategoryContainer>
-            <SearchInput placeholder="Search for items!" />
+            <SearchBar placeholder="Search for items!" />
             <SelectMenu>
                 <option value="allItems">All Items</option>
                 {dropDownValue}
@@ -37,7 +37,7 @@ const SearchBarAndCategoryContainer = styled.div`
     justify-content: space-around;
 `;
 
-const SearchInput = styled.input`
+const SearchBar = styled.input`
     width: 50%;
     height: 35px;
     font-size: 20px;

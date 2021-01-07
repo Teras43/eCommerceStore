@@ -1,7 +1,18 @@
-import React from 'react';
+import React from "react";
+import styled from "styled-components";
 
 const Privacy = () => (
-        <p>Keep it secret, keep it safe!</p>
-)
+    <PrivacyStatement>Keep it secret, keep it safe!</PrivacyStatement>
+);
 
-export default Privacy
+const PrivacyStatement = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    min-height: calc(100vh - 105px);
+    font-size: 25px;
+    font-weight: 700;
+`;
+
+export default Privacy;
