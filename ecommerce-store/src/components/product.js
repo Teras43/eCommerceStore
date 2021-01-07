@@ -17,14 +17,17 @@ const Product = ({ img, title, price, rating, description }) => {
                 pathname: "/productDetailsPage/" + title,
                 productData,
             }}
+            style={{ textDecoration: "none" }}
         >
             <ProductContainer>
                 <ImgContainer>
                     <ProductImage src={img} alt="Not found!" />
                 </ImgContainer>
-                <div>{title}</div>
-                <div>{price}</div>
-                <div>{rating}</div>
+                <TextContainerMain>
+                    <div>{title}</div>
+                    <div>${price}</div>
+                    <div>Rating: {rating} / 5</div>
+                </TextContainerMain>
             </ProductContainer>
         </NavLink>
     );
@@ -38,6 +41,10 @@ const ProductContainer = styled.div`
     box-sizing: border-box;
     padding: 10px 20px 50px 20px;
     font-size: 20px;
+`;
+
+const TextContainerMain = styled.div`
+    color: black;
 `;
 const ImgContainer = styled.div`
     display: flex;
