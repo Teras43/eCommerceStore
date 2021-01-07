@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 import store from "../store/index";
+import QuantityInput from "../components/quantityInput";
 
 const ProductDetails = (props) => {
     const [productCount, setProductCount] = useState(1);
@@ -32,7 +33,7 @@ const ProductDetails = (props) => {
                     Price: ${(props.location.productData || altData).price}
                 </div>
                 <div>
-                    Rating: {(props.location.productData || altData).rating}
+                    Rating: {(props.location.productData || altData).rating} / 5
                 </div>
             </BaseInfo>
             <br />
@@ -57,14 +58,7 @@ const ProductDetails = (props) => {
                 >
                     Add to Cart
                 </CartButton>
-                Quantity:{" "}
-                <QuantityInput
-                    type="tel"
-                    value={productCount}
-                    onChange={(event) => {
-                        setProductCount(Number(event.target.value));
-                    }}
-                />
+                Quantity: <QuantityInput updater={setProductCount} />
             </PurchaseOptions>
         </ProductContainer>
     );
@@ -135,13 +129,6 @@ const CartButton = styled.button`
     color: white;
     border-radius: 10px;
     outline: none;
-`;
-
-const QuantityInput = styled.input`
-    width: 40px;
-    margin-right: 60px;
-    font-size: 16px;
-    text-align: center;
 `;
 
 export default ProductDetails;

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
 const Footer = () => {
-    const style = { color: "white" };
+    const style = { color: "white", textDecoration: "none" };
 
     return (
         <FooterContainer>

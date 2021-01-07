@@ -4,7 +4,7 @@ import NavBar from "./navbar";
 import styled from "styled-components";
 
 const Header = () => {
-    const style = { color: "white" };
+    const style = { color: "white", textDecoration: "none" };
 
     return (
         <HeaderContainer>
