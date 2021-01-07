@@ -9,10 +9,6 @@ const ProductPage = () => {
     const [dropDown, setDropDown] = useState({
         dropDownVal: 'allItems'
     })
-    //function that calls listener
-    setDropDown = () => {
-
-    }
 
 
    const [productData, setProductData] = useState([]);
