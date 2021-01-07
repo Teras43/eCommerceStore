@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-// import Privacy from './privacy'
+import { NavLink } from "react-router-dom";
 
 const Footer = () => {
     const style = { color: "white" };
@@ -9,9 +9,9 @@ const Footer = () => {
         <FooterContainer>
             <FooterTextWrap>
                 &copy; 2020 Company Name
-                <a href="./privacy.js" style={style}>
+                <NavLink to="/privacy" style={style}>
                     Privacy
-                </a>
+                </NavLink>
             </FooterTextWrap>
         </FooterContainer>
     );
