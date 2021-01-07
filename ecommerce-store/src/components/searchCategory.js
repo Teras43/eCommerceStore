@@ -52,6 +52,15 @@ const SearchInput = styled.input`
 
 const SelectMenu = styled.select`
   width: 50%;
+    display: flex;
+    justify-content: space-around;
 `;
+
+const SearchBar = styled.input`
+    width: 50%;
+    height: 35px;
+    font-size: 20px;
+`;
+
 
 export default SearchAndCategory;

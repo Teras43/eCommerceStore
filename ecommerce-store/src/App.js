@@ -5,6 +5,7 @@ import ProductDetails from "./views/productDetailsPage";
 import MyCart from "./views/cartPage";
 import Login from "./views/login";
 import Footer from "./components/footer";
+import Privacy from "./components/privacy";
 
 function App() {
     return (
@@ -12,9 +13,13 @@ function App() {
             <Header />
             <Switch>
                 <Route exact path="/" component={ProductPage} />
-                <Route path="/productDetailsPage" component={ProductDetails} />
+                <Route
+                    path="/productDetailsPage/:title"
+                    component={ProductDetails}
+                />
                 <Route path="/cartPage" component={MyCart} />
                 <Route path="/login" component={Login} />
+                <Route path="/privacy" component={Privacy} />
             </Switch>
             <Footer />
         </>

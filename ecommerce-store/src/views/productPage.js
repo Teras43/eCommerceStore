@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ProductList from "../components/productList";
 import SearchAndCategory from "../components/searchCategory";
+import Spinner from "../components/Spinner";
 
 const productAPI =
     "https://my-json-server.typicode.com/tdmichaelis/typicode/products";
@@ -29,7 +30,11 @@ const ProductPage = () => {
     console.log(productData);
     console.log(dropDown);
 
-    return (
+    localStorage.setItem("allProducts", JSON.stringify(productData));
+
+    return productData.length === 0 ? (
+        <Spinner />
+    ) : (
         <>
             <SearchAndCategory productData={productData} dropDown={dropDown} />
             <ProductList productData={productDisplay} />
