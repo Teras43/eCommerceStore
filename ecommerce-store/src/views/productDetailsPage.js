@@ -6,7 +6,6 @@ import QuantityInput from "../components/quantityInput";
 
 const ProductDetails = (props) => {
     const [productCount, setProductCount] = useState(1);
-
     const history = useHistory();
 
     let altData;
@@ -131,7 +130,7 @@ const CartButton = styled.button`
     width: 100px;
     font-size: 16px;
     margin-left: 60px;
-    background-color: #049287;
+    background-color: #4863a0;
     color: white;
     border-radius: 10px;
     outline: none;
