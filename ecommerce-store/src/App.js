@@ -6,6 +6,7 @@ import MyCart from "./views/cartPage";
 import Login from "./views/login";
 import Footer from "./components/footer";
 import Privacy from "./components/privacy";
+import PurchasePage from "./views/purchasePage";
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
                 <Route path="/cartPage" component={MyCart} />
                 <Route path="/login" component={Login} />
                 <Route path="/privacy" component={Privacy} />
+                <Route path="/purchasePage" component={PurchasePage} />
             </Switch>
             <Footer />
         </>

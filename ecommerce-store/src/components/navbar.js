@@ -9,7 +9,7 @@ const NavBar = () => {
         <HeaderContent>
             <SearchProducts>
                 <NavLink to="/" style={style} exact>
-                    Products
+                    Home
                 </NavLink>
             </SearchProducts>
             {" | "}
