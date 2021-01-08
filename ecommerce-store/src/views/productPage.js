@@ -10,7 +10,7 @@ const ProductPage = () => {
 
 
     const [searchIt, setSearchIt] = useState({
-        searchItVal: 'allItems'
+        searchItVal: 'allProducts'
     })
 
    const [productData, setProductData] = useState([]);
@@ -25,7 +25,7 @@ const ProductPage = () => {
         setProductData(jsonData);
     };
     //have the functionality in an event listener to change product list when changed
-    let productDisplay = productData.filter(product => product.category === searchIt.searchItVal || searchIt.searchItVal === 'allItems');
+    let productDisplay = productData.filter(product => product.category === searchIt.searchItVal || searchIt.searchItVal === 'allProducts');
 
     console.log(productData);
 
