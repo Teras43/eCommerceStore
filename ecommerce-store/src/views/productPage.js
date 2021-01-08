@@ -7,6 +7,8 @@ const productAPI =
     "https://my-json-server.typicode.com/tdmichaelis/typicode/products";
 
 const ProductPage = () => {
+
+
     const [dropDown, setDropDown] = useState({
         dropDownVal: 'allItems'
     })
@@ -25,7 +27,7 @@ const ProductPage = () => {
     };
     console.log(dropDown.dropDownVal);
     //have the functionality in an event listener to change product list when changed
-    let productDisplay = productData.filter(product => product.category == dropDown.dropDownVal || dropDown.dropDownVal == 'allItems');
+    let productDisplay = productData.filter(product => product.category === dropDown.dropDownVal || dropDown.dropDownVal === 'allItems');
 
     console.log(productData);
     console.log(dropDown);
@@ -36,7 +38,7 @@ const ProductPage = () => {
         <Spinner />
     ) : (
         <>
-            <SearchAndCategory productData={productData} dropDown={dropDown} />
+            <SearchAndCategory productData={productData} setDropDown={setDropDown}  />
             <ProductList productData={productDisplay} />
         </>
     );

@@ -1,15 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
-const SearchAndCategory = ({ productData, dropDown }) => {
+const SearchAndCategory = ({ productData, setDropDown }) => {
   let categoryArray = [];
 
-  const selectCategory = (event) => {
-    dropDown = {
+    const selectCategory = (event) => {
+    setDropDown({
       dropDownVal: event.target.value,
-    };
-
-    console.log(dropDown);
+    })
   };
 
   productData.forEach((product) => {
@@ -31,8 +29,8 @@ const SearchAndCategory = ({ productData, dropDown }) => {
   return (
     <SearchBarAndCategoryContainer>
       <SearchInput placeholder="Search for items!" />
-      <SelectMenu value="allItems" onChange={selectCategory}>
-        <option value="allItems">All Items</option>
+      <SelectMenu value="value" onChange={selectCategory}>
+        <option value="value">All Items</option>
         {dropDownValue}
       </SelectMenu>
     </SearchBarAndCategoryContainer>
