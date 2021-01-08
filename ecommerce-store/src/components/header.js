@@ -10,7 +10,7 @@ const Header = () => {
         <HeaderContainer>
             <CompanyNameWrap>
                 <NavLink to="/" style={style} exact>
-                    Company Name
+                    Helix
                 </NavLink>
             </CompanyNameWrap>
             <NavBar />
@@ -34,6 +34,8 @@ const CompanyNameWrap = styled.div`
     @media only screen and (min-width: 375px) {
         width: 100%;
     }
+    font-size: 30px;
+    font-style: italic;
 `;
 
 export default Header;
