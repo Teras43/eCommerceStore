@@ -8,7 +8,7 @@ const Footer = () => {
     return (
         <FooterContainer>
             <FooterTextWrap>
-                &copy; 2020 Company Name
+                &copy; 2020 Helix
                 <NavLink to="/privacy" style={style}>
                     Privacy
                 </NavLink>

@@ -1,4 +1,5 @@
 import React from "react";
+import store from "../store/index";
 import styled from "styled-components";
 
 const MyCart = () => {

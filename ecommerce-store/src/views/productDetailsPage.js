@@ -50,6 +50,9 @@ const ProductDetails = (props) => {
                                 productName: (
                                     props.location.productData || altData
                                 ).title,
+                                productPrice: (
+                                    props.location.productData || altData
+                                ).price,
                                 quantity: productCount,
                             },
                         });

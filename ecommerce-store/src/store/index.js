@@ -8,6 +8,7 @@ function cart(state = initialState.cart, action) {
     switch (action.type) {
         case "ADD_TO_CART":
             const updatedState = [...state, action.data];
+            console.log(updatedState);
             return updatedState;
         case "REMOVE_FROM_CART":
             const reupdatedState = state.filter(
