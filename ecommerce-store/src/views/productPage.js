@@ -7,7 +7,13 @@ const productAPI =
     "https://my-json-server.typicode.com/tdmichaelis/typicode/products";
 
 const ProductPage = () => {
-    const [productData, setProductData] = useState([]);
+
+
+    const [searchIt, setSearchIt] = useState({
+        searchItVal: 'allProducts'
+    })
+
+   const [productData, setProductData] = useState([]);
 
     useEffect(() => {
         getProductData();
@@ -18,6 +24,9 @@ const ProductPage = () => {
         const jsonData = await response.json();
         setProductData(jsonData);
     };
+    //have the functionality in an event listener to change product list when changed
+    let productDisplay = productData.filter(product => product.category === searchIt.searchItVal || searchIt.searchItVal === 'allProducts');
+
     console.log(productData);
 
     localStorage.setItem("allProducts", JSON.stringify(productData));
@@ -26,8 +35,8 @@ const ProductPage = () => {
         <Spinner />
     ) : (
         <>
-            <SearchAndCategory productData={productData} />
-            <ProductList productData={productData} />
+            <SearchAndCategory productData={productData} setSearchIt={setSearchIt} />
+            <ProductList productData={productDisplay} />
         </>
     );
 };
