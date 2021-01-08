@@ -1,10 +1,12 @@
 import React from "react";
+// import store from "./../store/index";
 import styled from "styled-components";
+import CartDisplay from "../components/cartDisplay";
 
 const MyCart = () => {
     return (
         <CartContainer>
-            <h1>Placeholder Test</h1>
+            <CartDisplay />
         </CartContainer>
     );
 };

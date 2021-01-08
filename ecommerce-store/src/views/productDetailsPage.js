@@ -47,9 +47,15 @@ const ProductDetails = (props) => {
                         store.dispatch({
                             type: "ADD_TO_CART",
                             data: {
+                                productImg: (
+                                    props.location.productData || altData
+                                ).img,
                                 productName: (
                                     props.location.productData || altData
                                 ).title,
+                                productPrice: (
+                                    props.location.productData || altData
+                                ).price,
                                 quantity: productCount,
                             },
                         });

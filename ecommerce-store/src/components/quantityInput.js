@@ -5,7 +5,6 @@ const QuantityInput = ({ updater, initialValue = 1 }) => {
     const [quantityInputState, setQuantityInputState] = useState(initialValue);
 
     useEffect(() => {
-        console.log(quantityInputState);
         updater(quantityInputState);
     }, [updater, quantityInputState]);
 
