@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
-const SearchAndCategory = ({ productData, setDropDown }) => {
+const SearchAndCategory = ({ productData, setSearchIt }) => {
   let categoryArray = [];
 
     const selectCategory = (event) => {
-    setDropDown({
-      dropDownVal: event.target.value,
+    setSearchIt({
+      searchItVal: event.target.value,
     })
   };
 
@@ -28,7 +28,7 @@ const SearchAndCategory = ({ productData, setDropDown }) => {
 
   return (
     <SearchBarAndCategoryContainer>
-      <SearchInput placeholder="Search for items!" />
+      <SearchInput placeholder="Search for items!"onChange={selectCategory} />
       <SelectMenu value="value" onChange={selectCategory}>
         <option value="value">All Items</option>
         {dropDownValue}

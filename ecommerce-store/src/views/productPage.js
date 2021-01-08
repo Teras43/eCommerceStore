@@ -9,10 +9,9 @@ const productAPI =
 const ProductPage = () => {
 
 
-    const [dropDown, setDropDown] = useState({
-        dropDownVal: 'allItems'
+    const [searchIt, setSearchIt] = useState({
+        searchItVal: 'allItems'
     })
-
 
    const [productData, setProductData] = useState([]);
 
@@ -25,12 +24,10 @@ const ProductPage = () => {
         const jsonData = await response.json();
         setProductData(jsonData);
     };
-    console.log(dropDown.dropDownVal);
     //have the functionality in an event listener to change product list when changed
-    let productDisplay = productData.filter(product => product.category === dropDown.dropDownVal || dropDown.dropDownVal === 'allItems');
+    let productDisplay = productData.filter(product => product.category === searchIt.searchItVal || searchIt.searchItVal === 'allItems');
 
     console.log(productData);
-    console.log(dropDown);
 
     localStorage.setItem("allProducts", JSON.stringify(productData));
 
@@ -38,7 +35,7 @@ const ProductPage = () => {
         <Spinner />
     ) : (
         <>
-            <SearchAndCategory productData={productData} setDropDown={setDropDown}  />
+            <SearchAndCategory productData={productData} setSearchIt={setSearchIt} />
             <ProductList productData={productDisplay} />
         </>
     );
