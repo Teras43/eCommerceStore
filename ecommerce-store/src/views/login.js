@@ -1,16 +1,11 @@
 import React, { useState } from "react";
-import { Route } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import styled from "styled-components";
-// import NavBar from './navbar.js' brandons navbar. Work it out when he submits to master
-//import cart and have login proceed when you head to checkout
 
 const Login = () => {
     const [userInfo = { authenticated: false }, setUserInfo] = useState(null);
 
-    const HandleUserFormChange = (event) => {
-        const { email, password } = event.target;
-        setUserInfo(() => {});
-    };
+    const history = useHistory();
 
     const validateLogin = (event) => {
         let errors = {};
@@ -20,14 +15,13 @@ const Login = () => {
                 ...prevData,
                 authenticated: true,
             }));
-            // Set redirect to last page they were on here.
         } else {
             errors.invalidLogin = "Invalid Username or Password.";
         }
     };
 
     const loginAsGuest = () => {
-        <Route to="/productPage" />;
+        history.push("/");
     };
 
     return (
@@ -35,14 +29,8 @@ const Login = () => {
             <LoginContainer>
                 <NotifyDiv>Please Login Or Continue As Guest</NotifyDiv>
                 <div id="errorDiv"></div>
-                <EmailInput
-                    placeholder="Email"
-                    onChange={HandleUserFormChange}
-                />
-                <PasswordInput
-                    placeholder="Password"
-                    onChange={HandleUserFormChange}
-                />
+                <EmailInput placeholder="Email" />
+                <PasswordInput placeholder="Password" />
                 <ButtonDiv>
                     <ButtonStyles onClick={validateLogin}>Login</ButtonStyles>
                     <ButtonStyles onClick={loginAsGuest}>Guest</ButtonStyles>
@@ -60,6 +48,7 @@ const LoginContainer = styled.div`
     justify-content: center;
     align-items: center;
 `;
+
 const EmailInput = styled.input`
     height: 10px;
     width: 100px;
@@ -78,9 +67,11 @@ const ButtonDiv = styled.div`
     flex-direction: row;
     margin-top: 10px;
 `;
+
 const ButtonStyles = styled.button`
     /* margin: 10px; */
 `;
+
 const NotifyDiv = styled.div`
     display: flex;
     flex-wrap: nowrap;
