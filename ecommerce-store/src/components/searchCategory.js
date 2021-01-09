@@ -2,63 +2,59 @@ import React from "react";
 import styled from "styled-components";
 
 const SearchAndCategory = ({ productData, setSearchIt }) => {
-  let categoryArray = [];
+    let categoryArray = [];
 
     const selectCategory = (event) => {
-    setSearchIt({
-      searchItVal: event.target.value,
-    })
-  };
+        setSearchIt({
+            searchItVal: event.target.value,
+        });
+    };
 
-  productData.forEach((product) => {
-    if (!categoryArray.includes(product.category)) {
-      categoryArray.push(product.category);
-    }
+    productData.forEach((product) => {
+        if (!categoryArray.includes(product.category)) {
+            categoryArray.push(product.category);
+        }
 
-    return categoryArray;
-  });
+        return categoryArray;
+    });
 
-  let dropDownValue = categoryArray.map((category, index) => {
+    let dropDownValue = categoryArray.map((category, index) => {
+        return (
+            <option key={index} value={category}>
+                {category}
+            </option>
+        );
+    });
+
     return (
-      <option key={index} value={category}>
-        {category}
-      </option>
+        <SearchBarAndCategoryContainer>
+            <SearchInput
+                placeholder="Search for items!"
+                onChange={selectCategory}
+            />
+            <SelectMenu onChange={selectCategory}>
+                <option value="allItems">All Items</option>
+                {dropDownValue}
+            </SelectMenu>
+        </SearchBarAndCategoryContainer>
     );
-  });
-
-  return (
-    <SearchBarAndCategoryContainer>
-      <SearchInput placeholder="Search for items!"onChange={selectCategory} />
-      <SelectMenu value="value" onChange={selectCategory}>
-        <option value="value">All Items</option>
-        {dropDownValue}
-      </SelectMenu>
-    </SearchBarAndCategoryContainer>
-  );
 };
 
 /** Styles */
 const SearchBarAndCategoryContainer = styled.div`
-  display: flex;
-  justify-content: space-around;
-`;
-
-const SearchInput = styled.input`
-  width: 50%;
-  height: 25px;
-`;
-
-const SelectMenu = styled.select`
-  width: 50%;
     display: flex;
     justify-content: space-around;
 `;
 
-const SearchBar = styled.input`
+const SearchInput = styled.input`
     width: 50%;
-    height: 35px;
-    font-size: 20px;
+    height: 25px;
 `;
 
+const SelectMenu = styled.select`
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+`;
 
 export default SearchAndCategory;

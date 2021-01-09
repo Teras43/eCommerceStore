@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import store from "./../store/index";
 import styled from "styled-components";
 import CartDisplay from "../components/cartDisplay";
@@ -9,26 +9,33 @@ import DeleteButton from "../components/deleteCartItem";
 const MyCart = () => {
     const currentCart = store.getState();
     const history = useHistory();
+    const [remountCount, setRemountCount] = useState(0);
+    const refresh = () => setRemountCount(remountCount + 1);
 
     return (
         <>
             <CartContainer>
                 {currentCart.cart.map((index) => (
-                    <>
+                    <Fragment key={index}>
                         <CartDisplay
-                            key={index}
                             img={index.productImg}
                             title={index.productName}
                             price={index.productPrice}
                             quantity={index.quantity}
                         />
-                        <DeleteButton title={index.productName} />
-                    </>
+                        <DeleteButton
+                            productName={index.productName}
+                            onComplete={refresh}
+                        />
+                    </Fragment>
                 ))}
                 <TotalPrice />
                 <ButtonContainer>
                     <CheckOutBtn
                         onClick={() => {
+                            store.dispatch({
+                                type: "EMPTY_CART",
+                            });
                             history.push("/purchasePage");
                         }}
                     >
