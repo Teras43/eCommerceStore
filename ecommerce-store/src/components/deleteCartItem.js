@@ -2,14 +2,17 @@ import React from "react";
 import store from "../store";
 import styled from "styled-components";
 
-const DeleteCartItem = (title) => {
+const DeleteCartItem = ({ productName, onComplete }) => {
     return (
         <RemoveButton
             onClick={() => {
                 store.dispatch({
                     type: "REMOVE_FROM_CART",
-                    product: title,
+                    data: {
+                        productName,
+                    },
                 });
+                onComplete?.();
             }}
         >
             Remove
@@ -26,6 +29,7 @@ const RemoveButton = styled.button`
     font-size: 15px;
     margin-bottom: 20px;
     margin-left: 53px;
+    outline: none;
 `;
 
 export default DeleteCartItem;

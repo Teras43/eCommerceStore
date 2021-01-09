@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 
 const PurchasePage = () => {
+    const history = useHistory();
+
+    useEffect(() => {
+        setTimeout(() => {
+            history.push("/");
+        }, 3000);
+    }, [history]);
+
     return (
         <PurchasePageWrap>
             <ThankYou>Thanks for your purchase!</ThankYou>

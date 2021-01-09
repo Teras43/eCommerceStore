@@ -11,9 +11,11 @@ function cart(state = initialState.cart, action) {
             return updatedState;
         case "REMOVE_FROM_CART":
             const reupdatedState = state.filter(
-                (product) => product.title !== action.data.title
+                (product) => product.productName !== action.data.productName
             );
             return reupdatedState;
+        case "EMPTY_CART":
+            return initialState.cart;
         default:
             return state;
     }
