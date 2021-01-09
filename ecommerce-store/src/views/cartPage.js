@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useState } from "react";
 import store from "./../store/index";
 import styled from "styled-components";
 import CartDisplay from "../components/cartDisplay";

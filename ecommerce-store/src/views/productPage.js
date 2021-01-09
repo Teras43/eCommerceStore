@@ -12,6 +12,7 @@ const ProductPage = () => {
     });
 
     const [productData, setProductData] = useState([]);
+    const [filteredProducts, setFilteredProducts] = useState();
 
     useEffect(() => {
         getProductData();
@@ -22,14 +23,12 @@ const ProductPage = () => {
         const jsonData = await response.json();
         setProductData(jsonData);
     };
-    //have the functionality in an event listener to change product list when changed
+
     let productDisplay = productData.filter(
         (product) =>
             product.category === searchIt.searchItVal ||
             searchIt.searchItVal === "allItems"
     );
-
-    console.log(productData);
 
     localStorage.setItem("allProducts", JSON.stringify(productData));
 
@@ -40,8 +39,9 @@ const ProductPage = () => {
             <SearchAndCategory
                 productData={productData}
                 setSearchIt={setSearchIt}
+                onFilter={setFilteredProducts}
             />
-            <ProductList productData={productDisplay} />
+            <ProductList productData={filteredProducts || productDisplay} />
         </>
     );
 };

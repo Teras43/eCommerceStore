@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
-const SearchAndCategory = ({ productData, setSearchIt }) => {
+const SearchAndCategory = ({ productData, setSearchIt, onFilter }) => {
     let categoryArray = [];
+
+    const [inputState, setInputState] = useState("");
 
     const selectCategory = (event) => {
         setSearchIt({
@@ -26,11 +28,27 @@ const SearchAndCategory = ({ productData, setSearchIt }) => {
         );
     });
 
+    const editSearch = (event) => {
+        setInputState(event.target.value);
+    };
+
+    useEffect(() => {
+        if (inputState !== "") {
+            const filteredProducts = productData.filter((product) =>
+                product.title.toLowerCase().includes(inputState.toLowerCase())
+            );
+            onFilter(filteredProducts);
+        } else {
+            onFilter(undefined);
+        }
+    }, [inputState, onFilter, productData]);
+
     return (
         <SearchBarAndCategoryContainer>
             <SearchInput
                 placeholder="Search for items!"
-                onChange={selectCategory}
+                value={inputState.searchTerm}
+                onChange={editSearch}
             />
             <SelectMenu onChange={selectCategory}>
                 <option value="allItems">All Items</option>
