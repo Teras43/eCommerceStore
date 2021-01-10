@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import store from "../store";
 import styled from "styled-components";
@@ -6,8 +6,8 @@ import styled from "styled-components";
 const NavBar = () => {
     const currentState = store.getState();
 
-    const [remountCount, setRemountCount] = useState(0);
-    const refresh = () => setRemountCount(remountCount + 1);
+    // const [remountCount, setRemountCount] = useState(0);
+    // const refresh = () => setRemountCount(remountCount + 1);
 
     const style = { color: "white", textDecoration: "none" };
 
