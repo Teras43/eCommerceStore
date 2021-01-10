@@ -6,12 +6,7 @@ import styled from "styled-components";
 const NavBar = () => {
     const currentState = store.getState();
 
-    // const [remountCount, setRemountCount] = useState(0);
-    // const refresh = () => setRemountCount(remountCount + 1);
-
     const style = { color: "white", textDecoration: "none" };
-
-    // refresh();
 
     return (
         <HeaderContent>
