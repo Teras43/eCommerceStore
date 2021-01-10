@@ -1,14 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import store from "../store";
 import styled from "styled-components";
 
 const NavBar = () => {
+    const currentState = store.getState();
+
+    const [remountCount, setRemountCount] = useState(0);
+    const refresh = () => setRemountCount(remountCount + 1);
+
     const style = { color: "white", textDecoration: "none" };
+
+    // refresh();
 
     return (
         <HeaderContent>
             <SearchProducts>
-                <NavLink to="/" style={style} exact>
+                <NavLink to="/" style={style}>
                     Home
                 </NavLink>
             </SearchProducts>
@@ -20,8 +28,16 @@ const NavBar = () => {
             </CartLink>
             {" | "}
             <LoginLink>
-                <NavLink to="/login" style={style}>
-                    Login
+                <NavLink
+                    to="/login"
+                    style={style}
+                    onClick={() => {
+                        store.dispatch({
+                            type: "REMOVE_CREDENTIALS",
+                        });
+                    }}
+                >
+                    {currentState.userInfo.userName !== "" ? "Logout" : "Login"}
                 </NavLink>
             </LoginLink>
         </HeaderContent>

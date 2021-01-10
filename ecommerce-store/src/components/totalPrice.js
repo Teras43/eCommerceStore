@@ -18,7 +18,8 @@ const TotalPrice = () => {
 const TotalDiv = styled.div`
     display: flex;
     justify-content: center;
-    border: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
     padding: 15px;
     font-weight: 600;
     font-size: 20px;

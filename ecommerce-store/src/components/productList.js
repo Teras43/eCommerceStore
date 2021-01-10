@@ -1,9 +1,10 @@
 import React from "react";
 import Product from "./product";
+import styled from "styled-components";
 
 const ProductList = ({ productData }) => {
     return (
-        <div>
+        <ProductListContainer>
             {productData.map((product, index) => (
                 <Product
                     key={index}
@@ -14,8 +15,12 @@ const ProductList = ({ productData }) => {
                     description={product.description}
                 />
             ))}
-        </div>
+        </ProductListContainer>
     );
 };
+
+const ProductListContainer = styled.div`
+    min-height: calc(100vh - 105px);
+`;
 
 export default ProductList;
