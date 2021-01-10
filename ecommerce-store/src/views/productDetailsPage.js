@@ -96,6 +96,10 @@ const ProductContainer = styled.div`
     align-items: center;
     padding: 10px 20px 50px 20px;
     font-size: 20px;
+
+    @media only screen and (min-width: 800px) {
+        max-width: 800px;
+    }
 `;
 
 const ImgContainer = styled.div`
@@ -123,6 +127,10 @@ const PurchaseOptions = styled.div`
     align-items: center;
     width: 100vw;
     margin-top: 30px;
+
+    @media only screen and (min-width: 800px) {
+        max-width: 400px;
+    }
 `;
 
 const CartButton = styled.button`

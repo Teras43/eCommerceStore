@@ -62,17 +62,29 @@ const SearchAndCategory = ({ productData, setSearchIt, onFilter }) => {
 const SearchBarAndCategoryContainer = styled.div`
     display: flex;
     justify-content: space-around;
+
+    @media only screen and (min-width: 800px) {
+        width: 700px;
+    }
 `;
 
 const SearchInput = styled.input`
     width: 50%;
     height: 25px;
+    @media only screen and (min-width: 800px) {
+        margin-right: 15px;
+        margin-top: 1px;
+    }
 `;
 
 const SelectMenu = styled.select`
     width: 50%;
     display: flex;
     justify-content: space-around;
+
+    @media only screen and (min-width: 800px) {
+        margin-top: 1px;
+    }
 `;
 
 export default SearchAndCategory;

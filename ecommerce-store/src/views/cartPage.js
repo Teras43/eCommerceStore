@@ -12,9 +12,18 @@ const MyCart = () => {
     const [remountCount, setRemountCount] = useState(0);
     const refresh = () => setRemountCount(remountCount + 1);
 
+    let cartUser = "";
+
+    if (currentCart.userInfo.userName.length > 0) {
+        cartUser = currentCart.userInfo.userName;
+    } else {
+        cartUser = "Guest";
+    }
+
     return (
         <>
             <CartContainer>
+                <CurrentUser>{cartUser}</CurrentUser>
                 {currentCart.cart.map((index) => (
                     <Fragment key={index}>
                         <CartDisplay
@@ -31,16 +40,19 @@ const MyCart = () => {
                 ))}
                 <TotalPrice />
                 <ButtonContainer>
-                    <CheckOutBtn
-                        onClick={() => {
-                            store.dispatch({
-                                type: "EMPTY_CART",
-                            });
-                            history.push("/purchasePage");
-                        }}
-                    >
-                        Check Out!
-                    </CheckOutBtn>
+                    {currentCart.cart.length > 0 && (
+                        <CheckOutBtn
+                            className="btn"
+                            onClick={() => {
+                                store.dispatch({
+                                    type: "EMPTY_CART",
+                                });
+                                history.push("/purchasePage");
+                            }}
+                        >
+                            Check Out!
+                        </CheckOutBtn>
+                    )}
                 </ButtonContainer>
             </CartContainer>
         </>
@@ -52,6 +64,10 @@ const CartContainer = styled.div`
     display: flex;
     flex-direction: column;
     min-height: calc(100vh - 105px);
+
+    @media only screen and (min-width: 800px) {
+        width: 100%;
+    }
 `;
 
 const ButtonContainer = styled.div`
@@ -72,6 +88,21 @@ const CheckOutBtn = styled.button`
     border-radius: 8px;
     font-size: 16px;
     font-weight: 700;
+
+    .btn.disabled {
+        cursor: not-allowed;
+        opacity: 0.65;
+    }
+`;
+
+const CurrentUser = styled.div`
+    display: flex;
+    font-size: 30px;
+    margin: 12px;
+    font-weight: 700;
+    color: #4863a0;
+    padding-bottom: 5px;
+    border-bottom: 1px solid black;
 `;
 
 export default MyCart;
