@@ -6,7 +6,6 @@ import store from "../store";
 
 const Login = () => {
     const [errors, setErrors] = useState([]);
-    const currentState = store.getState();
 
     const history = useHistory();
 
@@ -46,9 +45,8 @@ const Login = () => {
             });
 
             history.replace("/");
-            console.log(currentState.userInfo);
         },
-        [history, currentState]
+        [history]
     );
 
     return (
