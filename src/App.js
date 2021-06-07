@@ -15,7 +15,7 @@ function App() {
       <Header />
       <PageBox>
         <Switch>
-          <Route exact path="/" component={ProductPage} />
+          <Route exact path="/eCommerceStore" component={ProductPage} />
           <Route
             path="/eCommerceStore/productDetailsPage/:title"
             component={ProductDetails}
