@@ -10,43 +10,43 @@ import PurchasePage from "./views/purchasePage";
 import styled from "styled-components";
 
 function App() {
-    return (
-        <PageBackground>
-            <Header />
-            <PageBox>
-                <Switch>
-                    <Route exact path="/" component={ProductPage} />
-                    <Route
-                        path="/productDetailsPage/:title"
-                        component={ProductDetails}
-                    />
-                    <Route path="/cartPage" component={MyCart} />
-                    <Route path="/login" component={Login} />
-                    <Route path="/privacy" component={Privacy} />
-                    <Route path="/purchasePage" component={PurchasePage} />
-                </Switch>
-            </PageBox>
-            <Footer />
-        </PageBackground>
-    );
+  return (
+    <PageBackground>
+      <Header />
+      <PageBox>
+        <Switch>
+          <Route exact path="/" component={ProductPage} />
+          <Route
+            path="/eCommerceStore/productDetailsPage/:title"
+            component={ProductDetails}
+          />
+          <Route path="/eCommerceStore/cartPage" component={MyCart} />
+          <Route path="/eCommerceStore/login" component={Login} />
+          <Route path="/eCommerceStore/privacy" component={Privacy} />
+          <Route path="/eCommerceStore/purchasePage" component={PurchasePage} />
+        </Switch>
+      </PageBox>
+      <Footer />
+    </PageBackground>
+  );
 }
 
 const PageBox = styled.div`
-    background-color: white;
+  background-color: white;
 
-    @media only screen and (min-width: 800px) {
-        display: flex;
-        flex-direction: column;
-        max-width: 800px;
-        border-left: 1px solid black;
-        border-right: 1px solid black;
-        margin: auto;
-        align-items: center;
-    } ;
+  @media only screen and (min-width: 800px) {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    margin: auto;
+    align-items: center;
+  } ;
 `;
 
 const PageBackground = styled.div`
-    background-color: #eeeeee;
+  background-color: #eeeeee;
 `;
 
 export default App;
