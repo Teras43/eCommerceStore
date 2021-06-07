@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/index.html/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/index.html/static/js/main.ce8d4893.chunk.js",
-    "main.js.map": "/index.html/static/js/main.ce8d4893.chunk.js.map",
-    "runtime-main.js": "/index.html/static/js/runtime-main.a1f8d0d6.js",
-    "runtime-main.js.map": "/index.html/static/js/runtime-main.a1f8d0d6.js.map",
-    "static/js/2.5ebfa310.chunk.js": "/index.html/static/js/2.5ebfa310.chunk.js",
-    "static/js/2.5ebfa310.chunk.js.map": "/index.html/static/js/2.5ebfa310.chunk.js.map",
-    "static/js/3.99933432.chunk.js": "/index.html/static/js/3.99933432.chunk.js",
-    "static/js/3.99933432.chunk.js.map": "/index.html/static/js/3.99933432.chunk.js.map",
-    "index.html": "/index.html/index.html",
-    "static/css/main.6dea0f05.chunk.css.map": "/index.html/static/css/main.6dea0f05.chunk.css.map",
-    "static/js/2.5ebfa310.chunk.js.LICENSE.txt": "/index.html/static/js/2.5ebfa310.chunk.js.LICENSE.txt"
+    "main.css": "/eCommerceStore/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/eCommerceStore/static/js/main.ce8d4893.chunk.js",
+    "main.js.map": "/eCommerceStore/static/js/main.ce8d4893.chunk.js.map",
+    "runtime-main.js": "/eCommerceStore/static/js/runtime-main.128cb49a.js",
+    "runtime-main.js.map": "/eCommerceStore/static/js/runtime-main.128cb49a.js.map",
+    "static/js/2.0036cabb.chunk.js": "/eCommerceStore/static/js/2.0036cabb.chunk.js",
+    "static/js/2.0036cabb.chunk.js.map": "/eCommerceStore/static/js/2.0036cabb.chunk.js.map",
+    "static/js/3.99933432.chunk.js": "/eCommerceStore/static/js/3.99933432.chunk.js",
+    "static/js/3.99933432.chunk.js.map": "/eCommerceStore/static/js/3.99933432.chunk.js.map",
+    "index.html": "/eCommerceStore/index.html",
+    "static/css/main.6dea0f05.chunk.css.map": "/eCommerceStore/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.0036cabb.chunk.js.LICENSE.txt": "/eCommerceStore/static/js/2.0036cabb.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.a1f8d0d6.js",
-    "static/js/2.5ebfa310.chunk.js",
+    "static/js/runtime-main.128cb49a.js",
+    "static/js/2.0036cabb.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
     "static/js/main.ce8d4893.chunk.js"
   ]
